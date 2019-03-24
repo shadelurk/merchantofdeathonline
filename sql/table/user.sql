@@ -1,0 +1,7 @@
+CREATE TABLE user (
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    user_id INT NOT NULL,
+    name VARCHAR(50) DEFAULT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_user_id(user_id)
+);

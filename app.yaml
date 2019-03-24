@@ -4,8 +4,13 @@ threadsafe: true
 
 handlers:
 - url: /.*
-  script: helloworld.php
+  script: index.php
+
+# [START env]
 env_variables:
+  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+  # values obtained when configuring your Cloud SQL instance.
   MYSQL_DSN: mysql:unix_socket=/cloudsql/merchantofdeathonline;dbname=merchant_of_death
-  MYSQL_USER: user	
+  MYSQL_USER: user
   MYSQL_PASSWORD: kIFNRTCBTZXJ2ZXIg
+# [END env]
