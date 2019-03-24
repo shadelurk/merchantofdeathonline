@@ -5,3 +5,7 @@ threadsafe: true
 handlers:
 - url: /.*
   script: helloworld.php
+env_variables:
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/merchantofdeathonline;dbname=merchant_of_death
+  MYSQL_USER: user	
+  MYSQL_PASSWORD: kIFNRTCBTZXJ2ZXIg
