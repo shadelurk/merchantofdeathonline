@@ -32,11 +32,27 @@ $app->get('/', function () use ($app) {
     $twig = $app['twig'];
 
     // Show existing guestbook entries.
-    $results = $db->query('SELECT * from entries');
+    $results = $db->query('SELECT * from user');
 
+    $json = array();
+foreach($results as $row){
+    //foreach($row as $results){
+    	$json[] = array(
+    			'user_id' => $row['user_id'],
+    			'name' => $row['name'],
+    	);
+    }
+return json_encode($json);
+
+    /*
+    return var_export($results,true);
+    var_dump($merchantOfDeathOnline);
+     */
+    /*
     return $twig->render('cloudsql.html.twig', [
         'results' => $results,
-    ]);
+]);
+   */
 });
 
 $app->post('/', function (Request $request) use ($app) {
