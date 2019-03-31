@@ -35,9 +35,9 @@ $app->get('/', function () use ($app) {
     $results = $db->query('SELECT * from user');
 
     $json = array();
-foreach($results as $row){
+    foreach($results as $row){
     //foreach($row as $results){
-    	$json[] = array(
+    	$json['userDataList'][] = array(
     			'user_id' => $row['user_id'],
     			'name' => $row['name'],
     	);
